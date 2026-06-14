@@ -111,6 +111,206 @@
     <script src="script.js"></script>
 </body>
 </html>
+    border-radius: 12px;
+    padding: 20px 15px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.quiz-header h2 { font-size: 1.1rem; }
+
+.timer-wrapper {
+    background: #fff0e6;
+    color: #ff5400;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.question-meta { display: flex; gap: 5px; margin-bottom: 15px; }
+.meta-badge { background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
+.meta-badge.category { background: #2563eb; color: white; }
+
+.question-box { font-size: 1rem; font-weight: 500; margin-bottom: 15px; }
+
+.options-grid { display: flex; flex-direction: column; gap: 10px; }
+
+.option-item {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.option-item.selected { background: #e0f2fe; border-color: #38bdf8; }
+
+.option-prefix {
+    width: 28px;
+    height: 28px;
+    background: white;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* REVIEWS & PEMBAHASAN JAWABAN */
+.review-ans-correct { background: #f0fdf4 !important; border-color: #4ade80 !important; }
+.review-ans-correct .option-prefix { background: #22c55e !important; color: white !important; border-color: #22c55e !important; }
+
+.review-ans-wrong { background: #fef2f2 !important; border-color: #fca5a5 !important; }
+.review-ans-wrong .option-prefix { background: #ef4444 !important; color: white !important; border-color: #ef4444 !important; }
+
+#review-explanation-box {
+    background-color: #eff6ff;
+    border-left: 5px solid #3b82f6;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* NAVIGATION BUTTONS */
+.quiz-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.btn-nav {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-nav.primary { background: #2563eb; color: white; }
+.btn-nav.secondary { background: #64748b; color: white; }
+.btn-nav.warning { background: #f1f5f9; color: #64748b; border: 1.5px solid #cbd5e1; }
+.btn-nav.warning.active-ragu { background: #eab308; color: white; }
+.btn-nav.success { background: #22c55e; color: white; }
+.hidden { display: none !important; }
+
+/* SIDEBAR & NUMBER GRID */
+.quiz-sidebar { background: white; border-radius: 12px; padding: 15px; }
+.quiz-sidebar h3 { font-size: 1rem; margin-bottom: 10px; }
+.number-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.num-box { aspect-ratio: 1; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+
+.num-box.active { background: #2563eb; color: white; }
+.num-box.filled { background: #22c55e; color: white; }
+.num-box.ragu { background: #eab308; color: white; }
+.num-box.review-correct { background: #22c55e; color: white; border-color: #22c55e; }
+.num-box.review-wrong { background: #ef4444; color: white; border-color: #ef4444; }
+.num-box.review-current { border: 2.5px solid #0f172a; }
+
+/* RESULT SCREEN */
+.result-card { background: white; border-radius: 12px; padding: 25px 15px; text-align: center; max-width: 500px; margin: 10px auto; }
+.score-display { margin: 15px auto; width: 110px; height: 110px; background: #f0fdf4; border: 4px solid #4ade80; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.score-label { font-size: 0.7rem; color: #166534; font-weight: 700; }
+.score-value { font-size: 2rem; font-weight: 800; color: #16a34a; }
+
+.quick-stats { display: flex; justify-content: space-around; margin-bottom: 20px; background: #f8fafc; padding: 10px; border-radius: 8px; }
+.stat-box { display: flex; flex-direction: column; font-size: 0.8rem; }
+.stat-box strong { font-size: 1.2rem; }
+.btn-action { width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; background: #ff7e00; color: white; }
+                    <span class="paket-desc">20 Soal Campuran (Sedang - Susah)</span>
+                </button>
+                <button class="btn-paket" onclick="startSimulation(3)">
+                    <span class="paket-name">Paket Simulasi 3</span>
+                    <span class="paket-desc">20 Soal Campuran (Materi Luas)</span>
+                </button>
+                <button class="btn-paket" onclick="startSimulation(4)">
+                    <span class="paket-name">Paket Simulasi 4</span>
+                    <span class="paket-desc">20 Soal Campuran (Materi Luas)</span>
+                </button>
+                <button class="btn-paket" onclick="startSimulation(5)">
+                    <span class="paket-name">Paket Simulasi 5</span>
+                    <span class="paket-desc">20 Soal Campuran (Tantangan Tinggi)</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-container">
+                <div class="quiz-main">
+                    <div class="quiz-header">
+                        <h2 id="current-paket-title">Simulasi OSN IPA</h2>
+                        <div id="quiz-timer-section" class="timer-wrapper">
+                            <div id="timer">60:00</div>
+                        </div>
+                    </div>
+
+                    <div class="question-meta">
+                        <span id="question-counter" class="meta-badge">Soal 1 dari 20</span>
+                        <span id="question-category" class="meta-badge category">Biologi</span>
+                    </div>
+
+                    <div class="question-box">
+                        <p id="question-text">Memuat soal...</p>
+                    </div>
+
+                    <div id="options-container" class="options-grid"></div>
+
+                    <div class="quiz-footer-nav">
+                        <button id="btn-prev" class="btn-nav secondary" onclick="prevQuestion()">Sebelumnya</button>
+                        <button id="btn-flag" class="btn-nav warning" onclick="toggleRagu()">Ragu-Ragu</button>
+                        <button id="btn-next" class="btn-nav primary" onclick="nextQuestion()">Selanjutnya</button>
+                        <button id="btn-finish" class="btn-nav success hidden" onclick="confirmFinish()">Selesai Ujian</button>
+                    </div>
+                </div>
+
+                <div class="quiz-sidebar">
+                    <h3>Navigasi Soal</h3>
+                    <div id="number-nav-grid" class="number-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-card">
+                <h2>Simulasi Selesai!</h2>
+                <div class="score-display">
+                    <span class="score-label">Skor Akhir</span>
+                    <span id="final-score" class="score-value">0</span>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="stat-box"><strong id="total-correct" class="txt-success">0</strong><span>Benar</span></div>
+                    <div class="stat-box"><strong id="total-wrong" class="txt-danger">0</strong><span>Salah</span></div>
+                    <div class="stat-box"><strong id="total-empty" class="txt-muted">0</strong><span>Kosong</span></div>
+                </div>
+
+                <button class="btn-action primary" style="margin-bottom: 12px; background: #2563eb;" onclick="openReviewMode()">Review & Pembahasan Soal</button>
+                <button class="btn-action" onclick="backToHome()">Kembali ke Menu Utama</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
                     <span class="paket-name">Paket Simulasi 2</span>
                     <span class="paket-desc">20 Soal Campuran (Sedang - Sukah)</span>
                 </button>
